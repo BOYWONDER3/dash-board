@@ -22,8 +22,8 @@ import box3 from "../assets/images/box3.svg";
 export default function Home() {
   return (
     <main className="flex">
-      <section className="border-r w-[351px] bg-[#FCFBF7] pt-20 pb-20">
-        <div className="flex flex-col gap-16 px-20">
+      <section className="border-r w-[600px] bg-[#FCFBF7]  pt-20 pb-20">
+        <div className="flex flex-col gap-16 px-20 ">
           <div>
             <img src={logo} alt="logo" />
           </div>
@@ -77,9 +77,9 @@ export default function Home() {
         </div>
       </section>
       {/* 2nd section  */}
-      <section>
-        <div className="flex w-full">
-          <aside className="bg-[#FFFFFF] border-r pt-20 px-16">
+      <section className="w-full">
+        <div className="flex ">
+          <aside className="bg-[#FFFFFF] border-r  w-1/2 pt-20 px-16">
             <div className="flex flex-col gap-11">
               <h1 className="text-5xl font-bold">My Courses</h1>
               <p className="font-normal text-lg">
@@ -97,105 +97,107 @@ export default function Home() {
               </li>
             </ul>
             <div className="flex flex-col gap-7">
-            <div className="flex bg-[#E6F4FF] rounded-lg px-4 py-4 gap-5">
-              <div className="bg-white w-[126px] rounded-xl">
-                <img src={box1} />
-              </div>
-              <div className="flex flex-col gap-5">
+              <div className="flex bg-[#E6F4FF] rounded-lg px-4 py-4 gap-5">
+                <div className="bg-white w-[126px] rounded-xl">
+                  <img src={box1} />
+                </div>
                 <div className="flex flex-col gap-5">
-                  <div className="rounded-xl bg-[#FFFFFF] text-[#F26D0A] text-nowrap text-xs font-normal w-[105px]  text-center">
-                    <p className="px-3 py-2">User Interface</p>
+                  <div className="flex flex-col gap-5">
+                    <div className="rounded-xl bg-[#FFFFFF] text-[#F26D0A] text-nowrap text-xs font-normal w-[105px]  text-center">
+                      <p className="px-3 py-2">User Interface</p>
+                    </div>
+                    <p className="flex flex-col text-[#3D42DD] font-bold text-lg">
+                      <span>Introduction to User Interface</span>
+                      <span>Design</span>
+                    </p>
                   </div>
-                  <p className="flex flex-col text-[#3D42DD] font-bold text-lg">
-                    <span>Introduction to User Interface</span>
-                    <span>Design</span>
-                  </p>
-                </div>
-                <div className="flex gap-3 justify-between">
-                  <span className="flex gap-1 justify-center items-center">
-                    <img className="bg-white rounded-full" src={grad} />
-                    <p className="text-nowrap text-xs text-[#3D42DD] font-normal">
-                      University of Minnesota
-                    </p>
-                  </span>
-                  <span className="flex gap-1 items-center justify-center">
-                    <img className="bg-white rounded-full" src={time} />
-                    <p className="text-nowrap text-xs text-[#3D42DD] font-normal">
-                      5h 40m left
-                    </p>
-                  </span>
+                  <div className="flex gap-3 justify-between">
+                    <span className="flex gap-1 justify-center items-center">
+                      <img className="bg-white rounded-full" src={grad} />
+                      <p className="text-nowrap text-xs text-[#3D42DD] font-normal">
+                        University of Minnesota
+                      </p>
+                    </span>
+                    <span className="flex gap-1 items-center justify-center">
+                      <img className="bg-white rounded-full" src={time} />
+                      <p className="text-nowrap text-xs text-[#3D42DD] font-normal">
+                        5h 40m left
+                      </p>
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="flex bg-[#E6F4FF] rounded-lg px-4 py-4 gap-5">
-              <div className="bg-white w-[126px] rounded-xl">
-                <img src={box2} />
-              </div>
-              <div className="flex flex-col gap-5">
+              <div className="flex bg-[#E6F4FF] rounded-lg px-4 py-4 gap-5">
+                <div className="bg-white w-[126px] rounded-xl">
+                  <img src={box2} />
+                </div>
                 <div className="flex flex-col gap-5">
-                  <div className="rounded-xl bg-[#FFFFFF] text-[#F26D0A] text-nowrap text-xs font-normal w-[105px]  text-center">
-                    <p className="px-3 py-2">User Interface</p>
+                  <div className="flex flex-col gap-5">
+                    <div className="rounded-xl bg-[#FFFFFF] text-[#F26D0A] text-nowrap text-xs font-normal w-[105px]  text-center">
+                      <p className="px-3 py-2">User Interface</p>
+                    </div>
+                    <p className="flex flex-col text-[#3D42DD] font-bold text-lg">
+                      <span>Introduction to User Interface</span>
+                      <span>Design</span>
+                    </p>
                   </div>
-                  <p className="flex flex-col text-[#3D42DD] font-bold text-lg">
-                    <span>Introduction to User Interface</span>
-                    <span>Design</span>
-                  </p>
-                </div>
-                <div className="flex gap-3 justify-between">
-                  <span className="flex gap-1 justify-center items-center">
-                    <img className="bg-white rounded-full" src={grad} />
-                    <p className="text-nowrap text-xs text-[#3D42DD] font-normal">
-                      University of Minnesota
-                    </p>
-                  </span>
-                  <span className="flex gap-1 items-center justify-center">
-                    <img className="bg-white rounded-full" src={time} />
-                    <p className="text-nowrap text-xs text-[#3D42DD] font-normal">
-                      5h 40m left
-                    </p>
-                  </span>
+                  <div className="flex gap-3 justify-between">
+                    <span className="flex gap-1 justify-center items-center">
+                      <img className="bg-white rounded-full" src={grad} />
+                      <p className="text-nowrap text-xs text-[#3D42DD] font-normal">
+                        University of Minnesota
+                      </p>
+                    </span>
+                    <span className="flex gap-1 items-center justify-center">
+                      <img className="bg-white rounded-full" src={time} />
+                      <p className="text-nowrap text-xs text-[#3D42DD] font-normal">
+                        5h 40m left
+                      </p>
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="flex bg-[#E6F4FF] rounded-lg px-4 py-4 gap-5">
-              <div className="bg-white w-[126px] rounded-xl">
-                <img src={box3} />
-              </div>
-              <div className="flex flex-col gap-5">
+              <div className="flex bg-[#E6F4FF] rounded-lg px-4 py-4 gap-5">
+                <div className="bg-white w-[126px] rounded-xl">
+                  <img src={box3} />
+                </div>
                 <div className="flex flex-col gap-5">
-                  <div className="rounded-xl bg-[#FFFFFF] text-[#F26D0A] text-nowrap text-xs font-normal w-[105px]  text-center">
-                    <p className="px-3 py-2">User Interface</p>
+                  <div className="flex flex-col gap-5">
+                    <div className="rounded-xl bg-[#FFFFFF] text-[#F26D0A] text-nowrap text-xs font-normal w-[105px]  text-center">
+                      <p className="px-3 py-2">User Interface</p>
+                    </div>
+                    <p className="flex flex-col text-[#3D42DD] font-bold text-lg">
+                      <span>Introduction to User Interface</span>
+                      <span>Design</span>
+                    </p>
                   </div>
-                  <p className="flex flex-col text-[#3D42DD] font-bold text-lg">
-                    <span>Introduction to User Interface</span>
-                    <span>Design</span>
-                  </p>
-                </div>
-                <div className="flex gap-3 justify-between">
-                  <span className="flex gap-1 justify-center items-center">
-                    <img className="bg-white rounded-full" src={grad} />
-                    <p className="text-nowrap text-xs text-[#3D42DD] font-normal">
-                      University of Minnesota
-                    </p>
-                  </span>
-                  <span className="flex gap-1 items-center justify-center">
-                    <img className="bg-white rounded-full" src={time} />
-                    <p className="text-nowrap text-xs text-[#3D42DD] font-normal">
-                      5h 40m left
-                    </p>
-                  </span>
+                  <div className="flex gap-3 justify-between">
+                    <span className="flex gap-1 justify-center items-center">
+                      <img className="bg-white rounded-full" src={grad} />
+                      <p className="text-nowrap text-xs text-[#3D42DD] font-normal">
+                        University of Minnesota
+                      </p>
+                    </span>
+                    <span className="flex gap-1 items-center justify-center">
+                      <img className="bg-white rounded-full" src={time} />
+                      <p className="text-nowrap text-xs text-[#3D42DD] font-normal">
+                        5h 40m left
+                      </p>
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
             </div>
           </aside>
           {/* next side */}
-          <aside className="bg-[#FCFBF7] px-20 pt-20 w-[589px] pb-20">
-            <div className="flex justify-between">
+          <aside className="bg-[#FCFBF7]  px-20 pt-20 w-1/2 pb-20">
+            <div className="flex justify-between w-full">
               <img src={bell} />
               <div className="rounded-xl bg-white gap-2 flex justify-center items-center px-1 py-3 pr-5">
                 <img src={search} />
-                <p className="font-bold text-sm text-[#514949]">Search for courses</p>
+                <p className="font-bold text-sm text-[#514949]">
+                  Search for courses
+                </p>
               </div>
             </div>
             <div className="flex flex-col gap-5 pt-10">
@@ -212,7 +214,9 @@ export default function Home() {
               </div>
             </div>
             <div className="pt-10 flex flex-col  gap-5">
-              <h1 className="font-bold text-lg">You have successfully completed</h1>
+              <h1 className="font-bold text-lg">
+                You have successfully completed
+              </h1>
               <div className="flex justify-between bg-white border-b rounded-t-lg px-5 py-5 items-center">
                 <div className="flex justify-center items-center gap-8">
                   <div className="">
