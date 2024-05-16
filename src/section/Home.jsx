@@ -18,14 +18,24 @@ import happy from "../assets/images/happy.svg";
 import box1 from "../assets/images/box1.svg";
 import box2 from "../assets/images/box2.svg";
 import box3 from "../assets/images/box3.svg";
+import menu from "../assets/images/menu.svg";
+import close from "../assets/images/close.svg";
+import { useState } from "react";
 
 export default function Home() {
+
+  const [open, setOpen] = useState(false);
+
+  function handleMenu() {
+    setOpen((open) => !open);
+  }
+
   return (
-    <main className="flex">
-      <section className="border-r w-[600px] bg-[#FCFBF7]  pt-20 pb-20">
+    <main className="flex-col flex md:flex-row">
+      <aside className={`border-r w-[600px] md:w-[450px] relative  bg-[#FCFBF7] pt-20 pb-20 md:inline-block ${open ? 'inline-block' : 'hidden'} `}>
         <div className="flex flex-col gap-16 px-20 ">
           <div>
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="logo" /> 
           </div>
           <div className="flex gap-3">
             <img src={blue} alt="logo" />
@@ -59,10 +69,10 @@ export default function Home() {
             </ul>
           </div>
         </div>
-        <div className="flex justify-end px-3 pt-20">
+        <div className="w-[200px] md:w-full md:flex justify-end pl-14 md:px-3 pt-20 ">
           <img src={happy} />
         </div>
-        <div className="flex flex-col place-items-end px-3 gap-3 pt-5">
+        <div className="flex pl-7 md:flex-col md:place-items-end md:px-3 md:gap-3 pt-5">
           <p className="text-center flex flex-col">
             <span className="text-lg font-bold">Invite Friends</span>
             <span className="font-normal text-sm">
@@ -70,18 +80,55 @@ export default function Home() {
             </span>
           </p>
         </div>
-        <div className="pt-5 flex justify-end pr-10">
-          <button className="text-base font-medium text-[#FFFFFF] bg-[#F26D0A] rounded-xl px-10 py-3">
+        <div className="pt-5 pl-20 flex md:justify-end pr-10">
+          <button className="text-sm font-normal text-[#FFFFFF] bg-[#F26D0A] rounded-lg px-3 py-2    md:text-base md:font-medium md:rounded-xl md:px-10 md:py-3">
             Get the Link
           </button>
+{/* 
+
+          <div className="flex justify-between w-full">
+              <img src={bell} />
+              <div className="rounded-xl bg-white gap-2 flex justify-center items-center px-1 py-3 pr-5">
+                <img src={search} />
+                <p className="font-bold text-sm text-[#514949]">
+                  Search for courses
+                </p>
+              </div>
+            </div>           */}
+
+
+
         </div>
-      </section>
+      </aside>
       {/* 2nd section  */}
       <section className="w-full">
-        <div className="flex ">
-          <aside className="bg-[#FFFFFF] border-r  w-1/2 pt-20 px-16">
+        <div className="flex-col flex md:flex-row">
+          <aside className="bg-[#FFFFFF] lg:border-r  lg:w-1/2 pt-20 px-4 lg:px-16">
             <div className="flex flex-col gap-11">
-              <h1 className="text-5xl font-bold">My Courses</h1>
+
+            
+
+
+            <div className="md:hidden  flex justify-between"> 
+
+
+
+            <div className={` ${!open ? 'inline-block' : 'hidden'} `}>
+            <div><img src={logo} alt="logo" /> </div>
+          </div>
+          <button className="" onClick={handleMenu}>
+            {!open ? (
+              <img className="" src={menu} />
+            ) : (
+              <img className="absolute top-16 right-5" src={close} />
+            )}
+          </button>
+
+
+        </div>
+
+        
+              <h1 className="text-2xl font-medium md:text-5xl md:font-bold">My Courses</h1>
               <p className="font-normal text-lg">
                 Welcome back Unique, take your next class
               </p>
@@ -98,7 +145,7 @@ export default function Home() {
             </ul>
             <div className="flex flex-col gap-7">
               <div className="flex bg-[#E6F4FF] rounded-lg px-4 py-4 gap-5">
-                <div className="bg-white w-[126px] rounded-xl">
+                <div className="bg-white relative top-10 md:top-0 h-[100px] flex items-center justify-center md:h-[150px] w-[126px] rounded-xl">
                   <img src={box1} />
                 </div>
                 <div className="flex flex-col gap-5">
@@ -106,9 +153,8 @@ export default function Home() {
                     <div className="rounded-xl bg-[#FFFFFF] text-[#F26D0A] text-nowrap text-xs font-normal w-[105px]  text-center">
                       <p className="px-3 py-2">User Interface</p>
                     </div>
-                    <p className="flex flex-col text-[#3D42DD] font-bold text-lg">
-                      <span>Introduction to User Interface</span>
-                      <span>Design</span>
+                    <p className=" text-[#3D42DD] font-bold text-lg">
+                      <span >Introduction to User Interface Design</span>
                     </p>
                   </div>
                   <div className="flex gap-3 justify-between">
@@ -127,8 +173,8 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="flex bg-[#E6F4FF] rounded-lg px-4 py-4 gap-5">
-                <div className="bg-white w-[126px] rounded-xl">
+              <div className="flex bg-[#F6EFFF] rounded-lg px-4 py-4 gap-5">
+                <div className="bg-white relative top-10 md:top-0 h-[100px] flex items-center justify-center md:h-[150px] w-[126px] rounded-xl">
                   <img src={box2} />
                 </div>
                 <div className="flex flex-col gap-5">
@@ -136,9 +182,8 @@ export default function Home() {
                     <div className="rounded-xl bg-[#FFFFFF] text-[#F26D0A] text-nowrap text-xs font-normal w-[105px]  text-center">
                       <p className="px-3 py-2">User Interface</p>
                     </div>
-                    <p className="flex flex-col text-[#3D42DD] font-bold text-lg">
-                      <span>Introduction to User Interface</span>
-                      <span>Design</span>
+                    <p className=" text-[#3D42DD] font-bold text-lg">
+                      <span >Introduction to User Interface Design</span>
                     </p>
                   </div>
                   <div className="flex gap-3 justify-between">
@@ -158,7 +203,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex bg-[#E6F4FF] rounded-lg px-4 py-4 gap-5">
-                <div className="bg-white w-[126px] rounded-xl">
+                <div className="bg-white relative top-10 md:top-0 h-[100px] flex items-center justify-center md:h-[150px] w-[126px] rounded-xl">
                   <img src={box3} />
                 </div>
                 <div className="flex flex-col gap-5">
@@ -166,9 +211,8 @@ export default function Home() {
                     <div className="rounded-xl bg-[#FFFFFF] text-[#F26D0A] text-nowrap text-xs font-normal w-[105px]  text-center">
                       <p className="px-3 py-2">User Interface</p>
                     </div>
-                    <p className="flex flex-col text-[#3D42DD] font-bold text-lg">
-                      <span>Introduction to User Interface</span>
-                      <span>Design</span>
+                    <p className=" text-[#3D42DD] font-bold text-lg">
+                      <span >Introduction to User Interface Design</span>
                     </p>
                   </div>
                   <div className="flex gap-3 justify-between">
@@ -190,7 +234,7 @@ export default function Home() {
             </div>
           </aside>
           {/* next side */}
-          <aside className="bg-[#FCFBF7]  px-20 pt-20 w-1/2 pb-20">
+          <aside className="bg-[#FCFBF7]  px-4 lg:px-20 pt-20 lg:w-1/2 pb-20">
             <div className="flex justify-between w-full">
               <img src={bell} />
               <div className="rounded-xl bg-white gap-2 flex justify-center items-center px-1 py-3 pr-5">
@@ -202,12 +246,12 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-5 pt-10">
               <h1 className="font-bold text-2xl">Milestones</h1>
-              <div className="flex gap-5 bg-[#FFFFFF] w-[365px] py-3 rounded-xl pl-3">
+              <div className="flex gap-5  bg-[#FFFFFF] w-ful md:w-[365px] py-3 rounded-xl pl-3">
                 <img src={cup} />
                 <div className="flex flex-col pt-8 gap-1">
                   <p className="font-bold text-lg">Goals</p>
                   <div className="flex gap-3">
-                    <img src={bar} />
+                    <img className="w-[100px] md:w-full" src={bar} />
                     <p className="font-bold text-lg">82%</p>
                   </div>
                 </div>
@@ -227,7 +271,7 @@ export default function Home() {
                   </div>
                   <p className="flex justify-center flex-col gap-0">
                     <span className="text-lg font-bold">100</span>
-                    <span className="text-xs font-bold">Tutorials</span>
+                    <span className="text-xs font-bold text-[#514949] opacity-50">Tutorials</span>
                   </p>
                 </div>
                 <div>
@@ -239,13 +283,13 @@ export default function Home() {
               <div className="flex justify-center items-center gap-8">
                 <div className="">
                   <img
-                    className="bg-[#3D42DD] py-3 px-3 rounded-full"
+                    className="bg-[#F26D0A] py-3 px-3 rounded-full"
                     src={star}
                   />
                 </div>
                 <p className="flex justify-center flex-col gap-0">
-                  <span className="text-lg font-bold">100</span>
-                  <span className="text-xs font-bold">Tutorials</span>
+                  <span className="text-lg font-bold">18</span>
+                  <span className="text-xs font-bold text-[#514949] opacity-50">Topics</span>
                 </p>
               </div>
               <div>
@@ -256,13 +300,13 @@ export default function Home() {
               <div className="flex justify-center items-center gap-8">
                 <div className="">
                   <img
-                    className="bg-[#3D42DD] py-3 px-3 rounded-full"
+                    className="bg-[#6C00F8] py-3 px-3 rounded-full"
                     src={star}
                   />
                 </div>
                 <p className="flex justify-center flex-col gap-0">
-                  <span className="text-lg font-bold">100</span>
-                  <span className="text-xs font-bold">Tutorials</span>
+                  <span className="text-lg font-bold">120</span>
+                  <span className="text-xs font-bold text-[#514949] opacity-50">Excercises</span>
                 </p>
               </div>
               <div>
