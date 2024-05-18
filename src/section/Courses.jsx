@@ -13,7 +13,7 @@ import close from "../assets/images/close.svg";
 import search from "../assets/icons/search.svg";
 import logo from "../assets/images/logo.svg";
 import { useState } from "react";
-import { boxCourses, courseTabs } from "../constants";
+import { boxCourses, courseTabs, starBox } from "../constants";
 
 export default function Courses() {
   const [open, setOpen] = useState(false);
@@ -52,11 +52,11 @@ export default function Courses() {
             <li className="text-[#000000] text-base font-bold border-b-4 border-[#F26D0A] pb-1">
               Design
             </li>
-            {courseTabs.map((item) => {
+            {courseTabs.map((item, i) => {
               return (
                 <li
-                  key={item.key}
-                  className=" opacity-50 text-base font-normal text-[#4b4747]"
+                  key={i}
+                  className={`opacity-50 text-base font-normal text-[#4b4747] ${item.isActive ? '' : '}`}
                 >
                   {item.title}
                 </li>
@@ -65,10 +65,10 @@ export default function Courses() {
           </ul>
           {/* box  */}
           <div className="flex flex-col gap-7">
-            {boxCourses.map((item) => {
+            {boxCourses.map((item, i) => {
               return (
-                <div className="flex bg-[#E6F4FF] rounded-lg px-4 py-4 gap-5">
-                  <div className="bg-white relative top-10 md:top-0 h-[100px] flex items-center justify-center md:h-[150px] w-[126px] rounded-xl">
+                <div key={i} className="flex bg-[#E6F4FF] rounded-lg px-4 py-4 gap-5">
+                  <div  className="bg-white relative top-10 md:top-0 h-[100px] flex items-center justify-center md:h-[150px] w-[126px] rounded-xl">
                     <img src={item.img} />
                   </div>
                   <div className="flex flex-col gap-5">
@@ -165,25 +165,30 @@ export default function Courses() {
             <h1 className="font-bold text-lg">
               You have successfully completed
             </h1>
-            <div className="flex justify-between bg-white border-b rounded-t-lg px-5 py-5 items-center">
-              <div className="flex justify-center items-center gap-8">
-                <div className="">
-                  <img
-                    className="bg-[#3D42DD] py-3 px-3 rounded-full"
-                    src={star}
-                  />
+            {/* start */}
+            {starBox.map((item, i) => {
+              return (
+                <div key={i} className="flex justify-between bg-white border-b rounded-t-lg px-5 py-5 items-center">
+                  <div className="flex justify-center items-center gap-8">
+                    <div className="">
+                      <img
+                        className="bg-[#3D42DD] py-3 px-3 rounded-full"
+                        src={item.img}
+                      />
+                    </div>
+                    <p className="flex justify-center flex-col gap-0">
+                      <span className="text-lg font-bold">{item.span}</span>
+                      <span className="text-xs font-bold text-[#514949] opacity-50">
+                        {item.text}
+                      </span>
+                    </p>
+                  </div>
+                  <div>
+                    <img src={item.icon} />
+                  </div>
                 </div>
-                <p className="flex justify-center flex-col gap-0">
-                  <span className="text-lg font-bold">100</span>
-                  <span className="text-xs font-bold text-[#514949] opacity-50">
-                    Tutorials
-                  </span>
-                </p>
-              </div>
-              <div>
-                <img src={next} />
-              </div>
-            </div>
+              );
+            })}
           </div>
           <div className="flex justify-between bg-white border-b rounded-t-lg px-5 py-5 items-center">
             <div className="flex justify-center items-center gap-8">
@@ -204,25 +209,7 @@ export default function Courses() {
               <img src={next} />
             </div>
           </div>
-          <div className="flex justify-between bg-white  rounded-t-lg px-5 py-5 items-center">
-            <div className="flex justify-center items-center gap-8">
-              <div className="">
-                <img
-                  className="bg-[#6C00F8] py-3 px-3 rounded-full"
-                  src={star}
-                />
-              </div>
-              <p className="flex justify-center flex-col gap-0">
-                <span className="text-lg font-bold">120</span>
-                <span className="text-xs font-bold text-[#514949] opacity-50">
-                  Excercises
-                </span>
-              </p>
-            </div>
-            <div>
-              <img src={next} />
-            </div>
-          </div>
+         
           <div className="pt-14 flex ">
             <h1 className="text-lg font-bold">Amazing Performance in</h1>
           </div>

@@ -1,38 +1,48 @@
 import logo from "../assets/images/logo.svg";
 import blue from "../assets/icons/blue.svg";
-import course from "../assets/icons/course.svg";
 import happy from "../assets/images/happy.svg";
 import { tabsLists } from "../constants";
 
-export default function Home({open}) {
-
+export default function Home({ open }) {
   return (
     <main className="flex-col flex md:flex-row">
-      <aside className={`border-r w-[600px] md:w-[450px] relative  bg-[#FCFBF7] pt-20 pb-20 md:inline-block ${open ? 'inline-block' : 'hidden'} `}>
+      <aside
+        className={`border-r w-[600px] md:w-[450px] relative  bg-[#FCFBF7] pt-20 pb-20 md:inline-block ${
+          open ? "inline-block" : "hidden"
+        } `}
+      >
         <div className="flex flex-col gap-16 px-20 ">
           <div>
-            <img src={logo} alt="logo" /> 
+            <img src={logo} alt="logo" />
           </div>
           <div className="flex gap-3">
             <img src={blue} alt="logo" />
             <p className="flex flex-col text-nowrap">
               <span className="text-base font-semibold">Uniqueideas</span>
-              <span className="font-normal text-xs">Creative Designer</span>
+              <span className="font-normal text-xs opacity-50">
+                Creative Designer
+              </span>
             </p>
           </div>
           <div>
             <ul className="flex flex-col gap-8">
-              <li className="flex gap-2 text-base font-semibold">
-                <img src={course} />
-                My Courses
-              </li>
-              {tabsLists.map((item) =>{
+              {tabsLists.map((item, i) => {
                 return (
-                  <li key={item.key} className="  opacity-50 flex gap-2 text-base font-medium text-[#514949]">
-                <img src={item.icon} />
-                <p>{item.title}</p>
-              </li>
-                )
+                  <li key={i} className="flex gap-2">
+                    <img src={item.icon} />
+                    <a href="">
+                      <p
+                        className={` text-base   ${
+                          item.isActive
+                            ? "font-semibold text-[#000000] "
+                            : " text-[#514949] opacity-50 font-medium"
+                        }`}
+                      >
+                        {item.title}
+                      </p>
+                    </a>
+                  </li>
+                );
               })}
             </ul>
           </div>
