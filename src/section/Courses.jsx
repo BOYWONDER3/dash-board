@@ -1,15 +1,12 @@
 import bell from "../assets/icons/bell.svg";
 import cup from "../assets/icons/cup.svg";
 import bar from "../assets/icons/bar.svg";
-import dot from "../assets/icons/dot.svg";
-import star from "../assets/icons/star.svg";
-import next from "../assets/icons/next.svg";
 import menu from "../assets/images/menu.svg";
 import close from "../assets/images/close.svg";
 import search from "../assets/icons/search.svg";
 import logo from "../assets/images/logo.svg";
 import { useState } from "react";
-import { boxCourses, courseTabs, starBox } from "../constants";
+import { boxCourses, courseTabs, starBox, writeUp } from "../constants";
 
 export default function Courses() {
   const [open, setOpen] = useState(false);
@@ -55,7 +52,7 @@ export default function Courses() {
                       : "opacity-50 text-base font-normal text-[#4b4747]"
                   }`}
                 >
-                  {item.title}
+                  <a href="">{item.title}</a>
                 </li>
               );
             })}
@@ -133,25 +130,28 @@ export default function Courses() {
               </div>
             </div>
           </div>
-          <div className="pt-10 flex flex-col  gap-5">
-            <h1 className="font-bold text-lg">
+          <div className="pt-10 flex flex-col ">
+            <h1 className="font-bold text-lg pb-5">
               You have successfully completed
             </h1>
-            {/* start */}
+            {/* startboxstar */}
             {starBox.map((item, i) => {
               return (
                 <div
                   key={i}
-                  className="flex justify-between bg-white border-b rounded-t-lg px-5 py-5 items-center"
+                  className="flex  justify-between bg-white border-b rounded-t-lg px-5 py-5 items-center"
                 >
                   <div className="flex justify-center items-center gap-8">
                     <div className="">
                       <img
-                        className="bg-[#3D42DD] py-3 px-3 rounded-full"
+                        className={` py-3 px-3 rounded-full ${
+                          item.isActive ? "bg-[#F26D0A]" : "bg-[#3D42DD]"
+                        } 
+                        }`}
                         src={item.img}
                       />
                     </div>
-                    <p className="flex justify-center flex-col gap-0">
+                    <p className="flex justify-center flex-col">
                       <span className="text-lg font-bold">{item.span}</span>
                       <span className="text-xs font-bold text-[#514949] opacity-50">
                         {item.text}
@@ -165,49 +165,25 @@ export default function Courses() {
               );
             })}
           </div>
-          <div className="flex justify-between bg-white border-b rounded-t-lg px-5 py-5 items-center">
-            <div className="flex justify-center items-center gap-8">
-              <div className="">
-                <img
-                  className="bg-[#F26D0A] py-3 px-3 rounded-full"
-                  src={star}
-                />
-              </div>
-              <p className="flex justify-center flex-col gap-0">
-                <span className="text-lg font-bold">18</span>
-                <span className="text-xs font-bold text-[#514949] opacity-50">
-                  Topics
-                </span>
-              </p>
-            </div>
-            <div>
-              <img src={next} />
-            </div>
-          </div>
-
           <div className="pt-14 flex ">
             <h1 className="text-lg font-bold">Amazing Performance in</h1>
           </div>
-          <div className="pt-5 flex gap-3">
-            <img className="flex items-start justify-start" src={dot} />
-            <p className="font-bold text-2xl">Illustration Design</p>
-          </div>
-          <p className="pl-6">
-            <span className="text-sm font-normal">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor
-            </span>
-          </p>
-          <div className="pt-5 flex gap-3">
-            <img className="flex items-start justify-start" src={dot} />
-            <p className="font-bold text-2xl">Illustration Design</p>
-          </div>
-          <p className="pl-6">
-            <span className="text-sm font-normal">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor
-            </span>
-          </p>
+          {writeUp.map((item) => {
+            return (
+              <>
+                <div className="pt-5 flex gap-3">
+                  <img
+                    className="flex items-start justify-start"
+                    src={item.icon}
+                  />
+                  <p className="font-bold text-2xl">{item.title}</p>
+                </div>
+                <p className="pl-6">
+                  <span className="text-sm font-normal">{item.text}</span>
+                </p>
+              </>
+            );
+          })}
         </aside>
       </div>
     </section>

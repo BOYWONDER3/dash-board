@@ -10,6 +10,7 @@ import grad from "../assets/icons/grad.svg";
 import time from "../assets/icons/time.svg";
 import star from "../assets/icons/star.svg";
 import next from "../assets/icons/next.svg";
+import dot from "../assets/icons/dot.svg";
 
 
 export const tabsLists = [
@@ -99,12 +100,14 @@ export const starBox = [
         span: '100',
         text: 'Tutorials',
         icon: next,
+        isActive: false,
     },
     {
         img: star,
         span: '18',
         text: 'Topics',
         icon: next,
+        isActive: true,
     },
     {
         img: star,
@@ -112,4 +115,17 @@ export const starBox = [
         text: 'Excercises',
         icon: next,
     }
+]
+
+export const writeUp = [
+    {
+        icon: dot,
+        title: 'Illustration Design',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor'
+    },
+    {
+        icon: dot, 
+        title: 'User Experience Design',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor'
+    },
 ]
