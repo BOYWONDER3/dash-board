@@ -47,15 +47,15 @@ export const courseTabs = [
     },
     {
         title: 'HTML',
-        isActive: true
+        isActive: false
     },
     {
         title: 'CSS',
-        isActive: true
+        isActive: false
     },
     {
         title: 'JavaScript',
-        isActive: true
+        isActive: false
     }
 ]
 
@@ -67,7 +67,8 @@ export const boxCourses = [
         icon: grad,
         title: 'University of Minnesota',
         icon2: time,
-        title2: '5h 40m left'
+        title2: '5h 40m left',
+        isActive: false
     },
     {
         img: box2,
@@ -76,17 +77,19 @@ export const boxCourses = [
         icon: grad,
         title: 'University of Minnesota',
         icon2: time,
-        title2: '5h 40m left'
+        title2: '5h 40m left',
+        isActive: true
     },
-    // {
-    //     img: box3,
-    //     p: 'User Interface',
-    //     span: 'Introduction to User Interface Design',
-    //     icon: grad,
-    //     title: 'University of Minnesota',
-    //     icon2: time,
-    //     title2: '5h 40m left'
-    // }
+    {
+        img: box3,
+        p: 'User Interface',
+        span: 'Introduction to User Interface Design',
+        icon: grad,
+        title: 'University of Minnesota',
+        icon2: time,
+        title2: '5h 40m left',
+        isActive: false
+    }
 ]
 
 

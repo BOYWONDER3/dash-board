@@ -1,13 +1,9 @@
-import grad from "../assets/icons/grad.svg";
-import time from "../assets/icons/time.svg";
 import bell from "../assets/icons/bell.svg";
 import cup from "../assets/icons/cup.svg";
 import bar from "../assets/icons/bar.svg";
 import dot from "../assets/icons/dot.svg";
 import star from "../assets/icons/star.svg";
 import next from "../assets/icons/next.svg";
-import box2 from "../assets/images/box2.svg";
-import box3 from "../assets/images/box3.svg";
 import menu from "../assets/images/menu.svg";
 import close from "../assets/images/close.svg";
 import search from "../assets/icons/search.svg";
@@ -49,14 +45,15 @@ export default function Courses() {
             </p>
           </div>
           <ul className="flex gap-7 pt-9 pb-12">
-            <li className="text-[#000000] text-base font-bold border-b-4 border-[#F26D0A] pb-1">
-              Design
-            </li>
             {courseTabs.map((item, i) => {
               return (
                 <li
                   key={i}
-                  className={`opacity-50 text-base font-normal text-[#4b4747] ${item.isActive ? '' : '}`}
+                  className={` ${
+                    item.isActive
+                      ? "text-[#000000] text-base font-bold border-b-4 border-[#F26D0A] pb-1"
+                      : "opacity-50 text-base font-normal text-[#4b4747]"
+                  }`}
                 >
                   {item.title}
                 </li>
@@ -67,8 +64,13 @@ export default function Courses() {
           <div className="flex flex-col gap-7">
             {boxCourses.map((item, i) => {
               return (
-                <div key={i} className="flex bg-[#E6F4FF] rounded-lg px-4 py-4 gap-5">
-                  <div  className="bg-white relative top-10 md:top-0 h-[100px] flex items-center justify-center md:h-[150px] w-[126px] rounded-xl">
+                <div
+                  key={i}
+                  className={`flex rounded-lg px-4 py-4 gap-5 ${
+                    item.isActive ? "bg-[#F6EFFF]" : "bg-[#E6F4FF]"
+                  }`}
+                >
+                  <div className="bg-white relative top-10 md:top-0 h-[100px] flex items-center justify-center md:h-[150px] w-[126px] rounded-xl">
                     <img src={item.img} />
                   </div>
                   <div className="flex flex-col gap-5">
@@ -104,37 +106,7 @@ export default function Courses() {
                 </div>
               );
             })}
-
             {/* box */}
-            <div className="flex bg-[#F6EFFF] rounded-lg px-4 py-4 gap-5">
-              <div className="bg-white relative top-10 md:top-0 h-[100px] flex items-center justify-center md:h-[150px] w-[126px] rounded-xl">
-                <img src={box2} />
-              </div>
-              <div className="flex flex-col gap-5">
-                <div className="flex flex-col gap-5">
-                  <div className="rounded-xl bg-[#FFFFFF] text-[#F26D0A] text-nowrap text-xs font-normal w-[105px]  text-center">
-                    <p className="px-3 py-2">User Interface</p>
-                  </div>
-                  <p className=" text-[#3D42DD] font-bold text-lg">
-                    <span>Introduction to User Interface Design</span>
-                  </p>
-                </div>
-                <div className="flex gap-3 justify-between">
-                  <span className="flex gap-1 justify-center items-center">
-                    <img className="bg-white rounded-full" src={grad} />
-                    <p className="text-nowrap text-xs text-[#3D42DD] font-normal">
-                      University of Minnesota
-                    </p>
-                  </span>
-                  <span className="flex gap-1 items-center justify-center">
-                    <img className="bg-white rounded-full" src={time} />
-                    <p className="text-nowrap text-xs text-[#3D42DD] font-normal">
-                      5h 40m left
-                    </p>
-                  </span>
-                </div>
-              </div>
-            </div>
           </div>
         </aside>
         {/* next side */}
@@ -168,7 +140,10 @@ export default function Courses() {
             {/* start */}
             {starBox.map((item, i) => {
               return (
-                <div key={i} className="flex justify-between bg-white border-b rounded-t-lg px-5 py-5 items-center">
+                <div
+                  key={i}
+                  className="flex justify-between bg-white border-b rounded-t-lg px-5 py-5 items-center"
+                >
                   <div className="flex justify-center items-center gap-8">
                     <div className="">
                       <img
@@ -209,7 +184,7 @@ export default function Courses() {
               <img src={next} />
             </div>
           </div>
-         
+
           <div className="pt-14 flex ">
             <h1 className="text-lg font-bold">Amazing Performance in</h1>
           </div>
