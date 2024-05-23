@@ -5,11 +5,13 @@ import menu from "../assets/images/menu.svg";
 import close from "../assets/images/close.svg";
 import search from "../assets/icons/search.svg";
 import logo from "../assets/images/logo.svg";
-import { useState } from "react";
 import { boxCourses, courseTabs, starBox, writeUp } from "../constants";
 
-export default function Courses() {
-  const [open, setOpen] = useState(false);
+import star from "../assets/icons/star.svg";
+import next from "../assets/icons/next.svg";
+
+export default function Courses({open, setOpen}) {
+
 
   function handleMenu() {
     setOpen((open) => !open);
@@ -17,24 +19,37 @@ export default function Courses() {
 
   return (
     <section className="w-full">
-      <div className="flex-col flex md:flex-row">
+      <div className="flex-col gap-2 flex lg:flex-row">
         <aside className="bg-[#FFFFFF] lg:border-r  lg:w-1/2 pt-20 px-4 lg:px-16">
           <div className="flex flex-col gap-11">
-            <div className="md:hidden  flex justify-between">
+
+          <div className="xl:hidden flex justify-between w-full">
+            <img src={bell} />
+            <div className="rounded-xl bg-white gap-2 flex justify-center items-center px-1 py-3 pr-5">
+              <img src={search} />
+              <p className=" opacity-50 font-bold text-sm text-[#514949]">
+                Search for courses
+              </p>
+            </div>
+          </div>
+
+
+            <div className="xl:hidden  flex justify-between">
+
               <div className={` ${!open ? "inline-block" : "hidden"} `}>
                 <div>
-                  <img src={logo} alt="logo" />{" "}
+                  <img src={logo} alt="logo" />
                 </div>
               </div>
-              <button className="" onClick={handleMenu}>
+            <button className="" onClick={handleMenu}>
                 {!open ? (
                   <img className="" src={menu} />
                 ) : (
-                  <img className="absolute top-16 right-5" src={close} />
+                  <img className="absolute pl-72  z-50 top-16 " src={close} />
                 )}
-              </button>
+              </button>  
             </div>
-            <h1 className="text-2xl font-medium md:text-5xl md:font-bold">
+            <h1 className="text-2xl font-medium lg:text-5xl md:font-bold">
               My Courses
             </h1>
             <p className="font-normal text-lg">
@@ -107,8 +122,8 @@ export default function Courses() {
           </div>
         </aside>
         {/* next side */}
-        <aside className="bg-[#FCFBF7]  px-4 lg:px-20 pt-20 lg:w-1/2 pb-20">
-          <div className="flex justify-between w-full">
+        <aside className="bg-[#FCFBF7] px-4 lg:px-20 pt-20 lg:w-1/2 pb-20">
+          <div className="hidden xl:inline  xl:flex justify-between w-full">
             <img src={bell} />
             <div className="rounded-xl bg-white gap-2 flex justify-center items-center px-1 py-3 pr-5">
               <img src={search} />
@@ -144,11 +159,9 @@ export default function Courses() {
                   <div className="flex justify-center items-center gap-8">
                     <div className="">
                       <img
-                        className={` py-3 px-3 rounded-full ${
-                          item.isActive ? "bg-[#F26D0A]" : "bg-[#3D42DD]"
-                        } 
-                        }`}
-                        src={item.img}
+                        className={` py-3 px-3 rounded-full`}
+                        src={star}
+                        style={{backgroundColor: item.color}}
                       />
                     </div>
                     <p className="flex justify-center flex-col">
@@ -159,7 +172,7 @@ export default function Courses() {
                     </p>
                   </div>
                   <div>
-                    <img src={item.icon} />
+                    <img src={next} />
                   </div>
                 </div>
               );

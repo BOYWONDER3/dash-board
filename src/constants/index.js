@@ -8,8 +8,6 @@ import box2 from "../assets/images/box2.svg";
 import box3 from "../assets/images/box3.svg";
 import grad from "../assets/icons/grad.svg";
 import time from "../assets/icons/time.svg";
-import star from "../assets/icons/star.svg";
-import next from "../assets/icons/next.svg";
 import dot from "../assets/icons/dot.svg";
 
 
@@ -96,24 +94,19 @@ export const boxCourses = [
 
 export const starBox = [
     {
-        img: star,
         span: '100',
         text: 'Tutorials',
-        icon: next,
-        isActive: false,
+        color: "#3D42DD"
     },
     {
-        img: star,
         span: '18',
         text: 'Topics',
-        icon: next,
-        isActive: true,
+        color: "#F26D0A"
     },
     {
-        img: star,
         span: '128',
         text: 'Excercises',
-        icon: next,
+        color: "#6C00F8"
     }
 ]
 

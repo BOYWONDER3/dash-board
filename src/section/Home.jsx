@@ -2,13 +2,40 @@ import logo from "../assets/images/logo.svg";
 import blue from "../assets/icons/blue.svg";
 import happy from "../assets/images/happy.svg";
 import { tabsLists } from "../constants";
+import menu from "../assets/images/menu.svg";
+import close from "../assets/images/close.svg";
 
-export default function Home({ open }) {
+export default function Home({ open, setOpen }) {
+
+  
+  function handleMenu() {
+    setOpen((open) => !open);
+  }
+
   return (
-    <main className="flex-col flex md:flex-row">
+    <div
+      className={`flex-col flex xl:flex-row xl:w-[351px]  ${
+        open ? "fixed h-full z-10" : ""
+      } `}
+    >
+    {/* <button className="" onClick={handleMenu}>
+                {!open ? (
+                  <img className="" src={menu} />
+                ) : (
+                  <img className="absolute " src={close} />
+                )}
+              </button>   */}
+      <div
+        className={`${
+          open
+            ? "bg-black bg-opacity-40 fixed w-full h-full top-0 left-0 z-10"
+            : ""
+        }`}
+      ></div>
+
       <aside
-        className={`border-r w-[600px] md:w-[450px] relative  bg-[#FCFBF7] pt-20 pb-20 md:inline-block ${
-          open ? "inline-block" : "hidden"
+        className={`border-r w-[351px] relative  bg-[#FCFBF7] pt-20 pb-20 xl:inline-block ${
+          open ? "inline-block h-full absolute top-0  z-20" : "hidden"
         } `}
       >
         <div className="flex flex-col gap-16 px-20 ">
@@ -47,10 +74,10 @@ export default function Home({ open }) {
             </ul>
           </div>
         </div>
-        <div className="w-[200px] md:w-full md:flex justify-end pl-14 md:px-3 pt-20 ">
+        <div className="w-[200px] lg:w-full lg:flex justify-end pl-14 xl:px-3 pt-20 ">
           <img src={happy} />
         </div>
-        <div className="flex pl-7 md:flex-col md:place-items-end md:px-3 md:gap-3 pt-5">
+        <div className="flex pl-7 lg:flex-col xl:place-items-end xl:px-3 xl:gap-3 pt-5">
           <p className="text-center flex flex-col">
             <span className="text-lg font-bold">Invite Friends</span>
             <span className="font-normal text-sm">
@@ -59,11 +86,11 @@ export default function Home({ open }) {
           </p>
         </div>
         <div className="pt-5 pl-20 flex md:justify-end pr-10">
-          <button className="text-sm font-normal text-[#FFFFFF] bg-[#F26D0A] rounded-lg px-3 py-2    md:text-base md:font-medium md:rounded-xl md:px-10 md:py-3">
+          <button className="text-sm font-normal text-[#FFFFFF] bg-[#F26D0A] rounded-lg px-3 py-2    xl:text-base md:font-medium lg:rounded-xl lg:px-10 md:py-3">
             Get the Link
           </button>
         </div>
       </aside>
-    </main>
+    </div>
   );
 }
